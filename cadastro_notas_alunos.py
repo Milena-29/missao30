@@ -4,7 +4,8 @@ while True:
     
     if quantidade_alunos < 10:
         print("É necessário cadastrar no mínimo 10 alunos! Tente novamente mais tarde.")
-
+        break
+        
     else:
         alunos = []
 
@@ -12,7 +13,6 @@ while True:
         nome = input("Digite o nome do aluno: ")
         
         notas = []
-        
         
         for l in range(3):
             
@@ -33,10 +33,8 @@ while True:
         else:
             situacao = "Reprovado"
 
-        
         alunos.append([nome, notas[0], notas[1], notas[2], media, situacao])
 
-   
     print("\nQuantidade total de alunos cadastrados:", len(alunos))
     
     for aluno in alunos:
@@ -50,4 +48,5 @@ while True:
         print("Aluno:", nome)
         print("Notas:", nota1, nota2, nota3)
         print("Média:", media)
+
         print("Situação:", situacao)
