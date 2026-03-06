@@ -1,20 +1,23 @@
 quantidade_alunos = int(input("Digite o número da quantidade de alunos que serão cadastrados: "))
 
-if quantidade_alunos < 10:
-    print("É necessário cadastrar no mínimo 10 alunos! Tente novamente mais tarde.")
-    break
-    
-else:
+while True:
+
+    if quantidade_alunos < 10:
+        print("\nÉ necessário cadastrar no mínimo 10 alunos! Tente novamente mais tarde.")
+        break
+
     alunos = []
 
     for m in range(quantidade_alunos):
-        nome = input("Digite o nome do aluno: ")
+
+        nome = input("\nDigite o nome do aluno: ")
 
         notas = []
 
         for l in range(3):
 
             while True:
+
                 nota = float(input("Digite a nota do aluno (0 a 10): "))
 
                 if nota < 0 or nota > 10:
@@ -29,8 +32,10 @@ else:
 
         if media >= 7:
             situacao = "Aprovado"
+
         elif media >= 5:
             situacao = "Recuperação"
+
         else:
             situacao = "Reprovado"
 
@@ -38,16 +43,20 @@ else:
 
     print("\nQuantidade total de alunos cadastrados:", len(alunos))
 
-    for aluno in alunos:
-        nome = aluno[0]
-        nota1 = aluno[1]
-        nota2 = aluno[2]
-        nota3 = aluno[3]
-        media = aluno[4]
-        situacao = aluno[5]
+    t = len(alunos)
+
+    for i in range(0, t, 1):
+
+        nome = alunos[i][0]
+        nota1 = alunos[i][1]
+        nota2 = alunos[i][2]
+        nota3 = alunos[i][3]
+        media = alunos[i][4]
+        situacao = alunos[i][5]
 
         print("\nAluno:", nome)
         print("Notas:", nota1, nota2, nota3)
         print("Média:", media)
-        print("Situação:", situacao)
+        print("Situação:", situacao, "\n")
 
+    break
