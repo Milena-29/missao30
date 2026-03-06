@@ -1,3 +1,26 @@
+def situacao_final(media):
+
+    if media >= 7:
+        situacao = "Aprovado"
+
+    elif media >= 5:
+        situacao = "Recuperação"
+
+    else:
+        situacao = "Reprovado"
+
+    return situacao
+
+def mensagem_final(nome, nota1, nota2, nota3, media, situacao):
+    print("\nAluno:", nome)
+    print("Nota 1:", nota1)
+    print("Nota 2:", nota2)
+    print("Nota 3:", nota3)
+    print("Média:", media)
+    print("Situação:", situacao, "\n")
+
+    return mensagem_final
+
 #Solicitar ao usuário a digitar a quantidade total de alunos
 quantidade_alunos = int(input("Digite o número da quantidade de alunos que serão cadastrados: "))
 
@@ -42,14 +65,7 @@ while True:
         media = (notas[0] + notas[1] + notas[2]) / 3
 
         # Verificação das notas para verificar se o aluno será aprovado,recuperação,reprovado
-        if media >= 7:
-            situacao = "Aprovado"
-
-        elif media >= 5:
-            situacao = "Recuperação"
-
-        else:
-            situacao = "Reprovado"
+        situacao = situacao_final(media)
 
         alunos.append([nome, notas[0], notas[1], notas[2], media, situacao])
 
@@ -66,9 +82,6 @@ while True:
         media = alunos[i][4]
         situacao = alunos[i][5]
 
-        print("\nAluno:", nome)
-        print("Notas:", nota1, nota2, nota3)
-        print("Média:", media)
-        print("Situação:", situacao, "\n")
+        mensagem = mensagem_final(nome, nota1, nota2, nota3, media, situacao)
 
     break
