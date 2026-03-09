@@ -19,8 +19,6 @@ def mensagem_final(nome, nota1, nota2, nota3, media, situacao):
     print("Média:", media)
     print("Situação:", situacao, "\n")
 
-    return mensagem_final
-
 #Solicitar ao usuário a digitar a quantidade total de alunos
 quantidade_alunos = int(input("Digite o número da quantidade de alunos que serão cadastrados: "))
 
@@ -28,7 +26,9 @@ while True:
 
     # Verfificação se a quantidade de alunos é menos que 10, caso seja, exibe uma mensagem de erro e encerra o programa.
     if quantidade_alunos < 10:
+        
         print("\nÉ necessário cadastrar no mínimo 10 alunos! Tente novamente mais tarde.")
+
         break
 
     else:
@@ -82,6 +82,6 @@ while True:
         media = alunos[i][4]
         situacao = alunos[i][5]
 
-        mensagem = mensagem_final(nome, nota1, nota2, nota3, media, situacao)
+        mensagem_final(nome, nota1, nota2, nota3, media, situacao)
 
     break
