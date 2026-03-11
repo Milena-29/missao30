@@ -71,10 +71,9 @@ while True:
 
     print("\nQuantidade total de alunos cadastrados:", len(alunos))
 
-    t = len(alunos)
-
     for aluno in alunos:
         nome, nota1, nota2, nota3, media, situacao = aluno
         mensagem_final(nome, nota1, nota2, nota3, media, situacao)
 
     break
+
